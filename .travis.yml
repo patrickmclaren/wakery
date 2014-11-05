@@ -12,7 +12,6 @@ install:
 - "./node_modules/bower/bin/bower install"
 before_script:
 - grunt
-after_script:
 - zip -r dist dist
 addons:
   artifacts:
