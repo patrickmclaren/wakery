@@ -1,0 +1,29 @@
+{
+  "name": "wakery",
+  "version": "0.0.0",
+  "homepage": "https://github.com/patrickmclaren/wakery",
+  "main": "init.js",
+  "authors": [
+    "Patrick McLaren <patrickkmclaren@gmail.com>"
+  ],
+  "description": "Wake-on-LAN for Chrome",
+  "keywords": [
+    "wakeonlan",
+    "wake-on-lan",
+    "chrome-app"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.1"
+  }
+}

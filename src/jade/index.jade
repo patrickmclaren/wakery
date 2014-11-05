@@ -1,0 +1,19 @@
+doctype html
+html(lang="en", ng-app="wakery")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Wakery: Wake-On-LAN
+
+        link(href="assets/css/wakery.css", rel="stylesheet")
+
+    body
+        div(ng-controller="WakeryController")
+            input(ng-model="ipEndpoint")
+            input(ng-model="macAddress")
+            button(ng-click="wakeOnLan()")
+
+            span(ng-bind="result")
+
+        script(src="assets/js/wakery.js")

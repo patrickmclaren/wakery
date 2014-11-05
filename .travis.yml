@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '0.10'
+env:
+  global:
+  - secure: hYwO/KgHMEN+uc7VXVkIw/n+N7WXtoY75j27OoOAyNOB/+32eaTnaEH9T/5lR81RKKUE4S/1tPYVBzTDqzAMNplQko4Od0GHiwIRPw988xh6KoNxosRPglvD/gzXfxMI5EwO/oWop8Wk8/uaE+agju7F4PEiWdA8s+QQ46iRZaY=
+  - secure: R0G/c30o2S0tQR0B+3jYXjmmHmWVRrvesaFLG32B6ZkY6hKfexQENZrh/wL7W4YGCZ7nrN+BoqzFvXfzxsxdCLoCqMD+GYx5yELT8c2nuNBlcKpRZKOznavmLCCTgi34P+f1EH8ewW/o1ApKZFl6y+vpKqaFDxIQ1UyyZ3Zl58c=
+before_install:
+- npm install -g grunt-cli
+install:
+- npm install
+- "./node_modules/bower/bin/bower install"
+before_script:
+- grunt
+addons:
+  artifacts:
+    key: AWS_ACCESS_KEY
+    secret: AWS_SECRET_KEY
+    bucket: "wakery"

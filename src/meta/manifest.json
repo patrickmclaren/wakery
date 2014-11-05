@@ -1,0 +1,11 @@
+{
+    "name" : "Wakery",
+    "description" : "Wake-on-LAN for Chrome",
+    "version" : "0.0.0",
+    "manifest_version" : 2,
+    "app": {
+        "background": {
+            "scripts": ["init.js"]
+        }
+    }
+}

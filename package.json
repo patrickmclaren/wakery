@@ -1,0 +1,37 @@
+{
+  "name": "wakery",
+  "version": "0.0.0",
+  "description": "Wake-on-LAN for Chrome",
+  "main": "init.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickmclaren/wakery.git"
+  },
+  "keywords": [
+    "wakeonlan",
+    "wake-on-lan",
+    "chrome-app"
+  ],
+  "author": "Patrick McLaren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickmclaren/wakery/issues"
+  },
+  "homepage": "https://github.com/patrickmclaren/wakery",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jade": "^0.13.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "karma": "^0.12.24",
+    "karma-jasmine": "^0.2.3",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}
