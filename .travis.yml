@@ -12,8 +12,12 @@ install:
 - "./node_modules/bower/bin/bower install"
 before_script:
 - grunt
+after_script:
+- zip -r dist dist
 addons:
   artifacts:
+    paths:
+    - dist.zip
     key: AWS_ACCESS_KEY
     secret: AWS_SECRET_KEY
     bucket: "wakery"
