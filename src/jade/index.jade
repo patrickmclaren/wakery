@@ -1,19 +1,68 @@
 doctype html
-html(lang="en", ng-app="wakery")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
-        title Wakery: Wake-On-LAN
+html(lang="en", ng-app="wakery", ng-csp)
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Wakery: Wake-On-LAN
 
-        link(href="assets/css/wakery.css", rel="stylesheet")
+    link(href="assets/css/wakery.css", rel="stylesheet")
 
-    body
-        div(ng-controller="WakeryController")
-            input(ng-model="ipEndpoint")
-            input(ng-model="macAddress")
-            button(ng-click="wakeOnLan()")
+  body
+    .container-fluid(ng-controller="WakeryController")
+      .row
+        .col-md-12
+          .page-header
+            h1 Wakery &nbsp;
+              small Wake-on-LAN
 
-            span(ng-bind="result")
+      .row
+        .col-md-12
+    
+          .main          
+            .form-group
+              label Select a Machine
+    
+              .row
+                .col-md-8
+                  select.form-control(ng-model="machine", ng-options="machine.name for machine in machines")
+    
+                .col-md-4
+                  new-machine
+    
+            div.btn-group(ng-if="machine")
+              button.btn.btn-success(ng-click="wakeOnLan()") Wake
+              button.btn.btn-warning(ng-click="deleteMachine()") Delete
 
-        script(src="assets/js/wakery.js")
+            hr
+
+            div(ng-if="errorMessages && errorMessages.length > 0")
+              .alert.alert-danger(ng-repeat="error in errorMessages")
+                p
+                  strong Oops! &nbsp;
+                  span {{ error }}
+
+            div(ng-if="infoMessages && infoMessages.length > 0")
+              h3 Output
+
+              pre
+                samp(ng-repeat="info in infoMessages")
+                  span &gt; {{ info }}
+                  br
+
+          .machine-form.hide
+            .form-group
+              label Name
+              input.form-control(ng-model="machine.name")
+
+            .form-group
+              label IP Address
+              input.form-control(ng-model="machine.ipAddress")
+    
+            .form-group
+              label MAC Address
+              input.form-control(ng-model="machine.macAddress")
+    
+            create-machine
+
+    script(src="assets/js/wakery.js")

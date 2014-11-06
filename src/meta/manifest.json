@@ -1,11 +1,21 @@
 {
     "name" : "Wakery",
     "description" : "Wake-on-LAN for Chrome",
+    "author": "Patrick McLaren",
     "version" : "0.0.0",
     "manifest_version" : 2,
     "app": {
         "background": {
             "scripts": ["init.js"]
         }
-    }
+    },
+    "sockets": {
+        "udp": {
+            "bind": "*:*",
+            "send": "*:9"
+        }
+    },
+    "permissions": [
+        "storage"
+    ]
 }
